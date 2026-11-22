@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://weightlossdiet.github.io/sitemap.xml
+Sitemap: https://weightlossdiethub.github.io/sitemap.xml
+
