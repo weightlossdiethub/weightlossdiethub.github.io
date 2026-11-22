@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weight Loss Diet — Home</title>
+<meta name="description" content="Practical weight-loss tools and guides: calorie deficits, portion control, exercise, sleep, and breaking plateaus.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+body{font-family:Arial,Helvetica,sans-serif;color:#1f2d3d;background:#f2f7f8;margin:0;line-height:1.6}
+header{background:#0f766e;color:#fff;padding:22px 20px}
+.header-inner{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.site-title{font-size:26px;margin:0;letter-spacing:1px}
+.site-title a{color:#fff;text-decoration:none}
+.tagline{margin:4px 0 0;color:#ccfbf1;font-size:14px}
+nav a{color:#fff;text-decoration:none;margin-left:16px;font-size:14px}
+nav a:hover{text-decoration:underline}
+main{max-width:1080px;margin:0 auto;padding:24px 20px 60px}
+h1{font-size:28px;color:#0f766e}
+h2{font-size:22px;color:#0f766e;margin-top:36px}
+h3{font-size:17px;color:#134e4a}
+a{color:#0f766e}
+.hero{background:#fff;border:1px solid #d7e8ea;border-radius:10px;padding:24px;margin-bottom:24px}
+.hero p{font-size:16px;color:#44586a}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 0 24px}
+.stat{background:#fff;border:1px solid #d7e8ea;border-radius:10px;padding:16px;text-align:center}
+.stat b{display:block;font-size:26px;color:#0f766e}
+.stat span{font-size:13px;color:#64748b}
+.tools-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.tool{background:#fff;border:1px solid #d7e8ea;border-radius:10px;padding:20px}
+.tool.wide{grid-column:1/-1}
+label{display:block;font-size:13px;font-weight:bold;margin:10px 0 4px;color:#334155}
+input,select{width:100%;padding:9px;border:1px solid #cbd5e1;border-radius:6px;font-size:15px;box-sizing:border-box}
+button{background:#0f766e;color:#fff;border:none;padding:10px 18px;border-radius:6px;font-size:15px;cursor:pointer;margin-top:12px}
+button:hover{background:#0d5c56}
+.result{margin-top:12px;background:#ecfeff;border-left:4px solid #0891b2;padding:10px 12px;font-size:14px;border-radius:0 6px 6px 0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.card{background:#fff;border:1px solid #d7e8ea;border-radius:10px;padding:18px}
+.card h3{margin-top:0}
+.card p{font-size:14px;color:#44586a}
+.card a{text-decoration:none;font-weight:bold}
+.progress{height:10px;background:#e2e8f0;border-radius:5px;overflow:hidden;margin:10px 0}
+.progress i{display:block;height:100%;background:#0f766e}
+footer{text-align:center;color:#64748b;font-size:13px;padding:24px 20px;border-top:1px solid #d7e8ea}
+footer a{color:#64748b}
+.guide-list{list-style:none;padding:0}
+.guide-list li{background:#fff;border:1px solid #d7e8ea;border-radius:10px;padding:16px;margin:10px 0}
+.guide-list a{font-size:18px;font-weight:bold;text-decoration:none}
+.guide-list p{color:#64748b;font-size:14px;margin:4px 0 0}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid #d7e8ea;padding:8px;text-align:left}
+th{background:#ecfeff}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}.tools-grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><div><p class="site-title"><a href="index.html">WEIGHT LOSS DIET</a></p><p class="tagline">Practical, steady weight loss — no fads, no extremes</p></div>
+<nav><a href="index.html">Dashboard</a><a href="guides/calorie-deficit-explained.html">Guides</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></div></header>
+<main><div class="hero"><h1>Steady, sustainable weight loss</h1><p>Use the dashboard tools to find your calorie target, then read the guides to build habits that last. No fads, no extremes — just practical steps that work.</p></div>
+
+<div class="stats">
+<div class="stat"><b>0.5–1 kg</b><span>safe loss per week</span></div>
+<div class="stat"><b>500 kcal</b><span>typical daily deficit</span></div>
+<div class="stat"><b>7–9 hrs</b><span>sleep to aim for</span></div>
+<div class="stat"><b>35 ml/kg</b><span>daily water guide</span></div>
+</div>
+<h2>Your Tools</h2>
+<div class="tools-grid">
+<div class="tool"><h3>BMI Calculator</h3>
+<p>Body mass index is weight in kilograms divided by height in metres squared.</p>
+<label for="bmi-w">Weight (kg)</label><input id="bmi-w" type="number" min="20" value="80">
+<label for="bmi-h">Height (cm)</label><input id="bmi-h" type="number" min="100" value="175">
+<button onclick="calcBMI()">Calculate BMI</button>
+<p id="bmi-out" class="result">Your BMI will appear here.</p></div>
+
+<div class="tool"><h3>Calorie Deficit Calculator</h3>
+<p>Estimates your maintenance calories (TDEE) with the Mifflin-St Jeor equation, then shows a deficit target.</p>
+<label for="cd-sex">Sex</label><select id="cd-sex"><option value="m">Male</option><option value="f">Female</option></select>
+<label for="cd-w">Weight (kg)</label><input id="cd-w" type="number" min="20" value="80">
+<label for="cd-h">Height (cm)</label><input id="cd-h" type="number" min="100" value="175">
+<label for="cd-age">Age (years)</label><input id="cd-age" type="number" min="10" value="35">
+<label for="cd-act">Activity level</label><select id="cd-act"><option value="1.2">Sedentary (little or no exercise)</option><option value="1.375">Lightly active (1–3 days/week)</option><option value="1.55" selected>Moderately active (3–5 days/week)</option><option value="1.725">Very active (6–7 days/week)</option><option value="1.9">Extra active (physical job + training)</option></select>
+<label for="cd-def">Daily deficit (kcal)</label><input id="cd-def" type="number" min="0" step="50" value="500">
+<button onclick="calcDeficit()">Calculate calories</button>
+<p id="cd-out" class="result">Your calorie target will appear here.</p></div>
+
+<div class="tool"><h3>Weight-Loss Timeline</h3>
+<p>See how long a goal may take at a safe rate of 0.5 to 1 kg per week.</p>
+<label for="tl-now">Current weight (kg)</label><input id="tl-now" type="number" min="20" value="90">
+<label for="tl-goal">Target weight (kg)</label><input id="tl-goal" type="number" min="20" value="78">
+<label for="tl-rate">Loss rate (kg per week)</label><select id="tl-rate"><option value="0.5">0.5 kg/week (steady)</option><option value="0.75" selected>0.75 kg/week</option><option value="1">1 kg/week (faster)</option></select>
+<button onclick="calcTimeline()">Show timeline</button>
+<p id="tl-out" class="result">Your timeline will appear here.</p></div>
+
+<div class="tool"><h3>Macro Calculator</h3>
+<p>Splits your daily calories into protein, carbohydrate, and fat grams (30% protein, 40% carbs, 30% fat).</p>
+<label for="mc-cal">Daily calories (kcal)</label><input id="mc-cal" type="number" min="800" step="50" value="2000">
+<button onclick="calcMacros()">Calculate macros</button>
+<p id="mc-out" class="result">Your macros will appear here.</p></div>
+
+<div class="tool wide"><h3>Daily Water Intake Calculator</h3>
+<p>A common guide is about 35 ml of water per kilogram of body weight per day. This is a rough guide, not a medical prescription; hot weather, exercise, and illness raise needs.</p>
+<label for="wt-kg">Body weight (kg)</label><input id="wt-kg" type="number" min="20" value="80" style="max-width:340px">
+<button onclick="calcWater()">Calculate water</button>
+<p id="wt-out" class="result">Your water guide will appear here.</p></div>
+</div>
+
+<script>
+function calcBMI(){
+  var w=parseFloat(document.getElementById('bmi-w').value), h=parseFloat(document.getElementById('bmi-h').value)/100;
+  var out=document.getElementById('bmi-out');
+  if(!(w>0)||!(h>0)){out.textContent='Please enter a valid weight and height.';return;}
+  var bmi=w/(h*h), cat=bmi<18.5?'Underweight':bmi<25?'Healthy weight':bmi<30?'Overweight':'Obese';
+  out.textContent='Your BMI is '+bmi.toFixed(1)+' — '+cat+'. (Under 18.5 underweight, 18.5–24.9 healthy, 25–29.9 overweight, 30+ obese.)';
+}
+function calcDeficit(){
+  var sex=document.getElementById('cd-sex').value, w=parseFloat(document.getElementById('cd-w').value), h=parseFloat(document.getElementById('cd-h').value), age=parseFloat(document.getElementById('cd-age').value), act=parseFloat(document.getElementById('cd-act').value), def=parseFloat(document.getElementById('cd-def').value);
+  var out=document.getElementById('cd-out');
+  if(!(w>0)||!(h>0)||!(age>0)||isNaN(def)){out.textContent='Please enter valid numbers for weight, height, and age.';return;}
+  var bmr=10*w+6.25*h-5*age+(sex==='m'?5:-161);
+  var tdee=bmr*act, target=tdee-def;
+  out.textContent='BMR: '+Math.round(bmr)+' kcal/day. Maintenance (TDEE): '+Math.round(tdee)+' kcal/day. With a '+def+' kcal deficit, aim for about '+Math.round(target)+' kcal/day. Do not go below 1,200 kcal/day (women) or 1,500 kcal/day (men) without medical supervision.';
+}
+function calcTimeline(){
+  var now=parseFloat(document.getElementById('tl-now').value), goal=parseFloat(document.getElementById('tl-goal').value), rate=parseFloat(document.getElementById('tl-rate').value);
+  var out=document.getElementById('tl-out');
+  if(!(now>0)||!(goal>0)||!(rate>0)){out.textContent='Please enter valid weights.';return;}
+  if(goal>=now){out.textContent='Your target weight should be lower than your current weight for a weight-loss timeline.';return;}
+  var loss=now-goal, weeks=Math.ceil(loss/rate), months=(weeks/4.345).toFixed(1);
+  out.textContent='You aim to lose '+loss.toFixed(1)+' kg at '+rate+' kg/week: about '+weeks+' weeks (roughly '+months+' months). Expect some weeks to be faster or slower — the trend matters more than any single week.';
+}
+function calcMacros(){
+  var cal=parseFloat(document.getElementById('mc-cal').value);
+  var out=document.getElementById('mc-out');
+  if(!(cal>0)){out.textContent='Please enter a daily calorie number greater than zero.';return;}
+  var p=(cal*0.30/4).toFixed(0), c=(cal*0.40/4).toFixed(0), f=(cal*0.30/9).toFixed(0);
+  out.textContent='At '+cal+' kcal/day: protein '+p+' g ('+Math.round(cal*0.30)+' kcal), carbs '+c+' g ('+Math.round(cal*0.40)+' kcal), fat '+f+' g ('+Math.round(cal*0.30)+' kcal). Protein and carbs provide 4 kcal per gram; fat provides 9 kcal per gram.';
+}
+function calcWater(){
+  var kg=parseFloat(document.getElementById('wt-kg').value);
+  var out=document.getElementById('wt-out');
+  if(!(kg>0)){out.textContent='Please enter a body weight greater than zero.';return;}
+  var ml=kg*35;
+  out.textContent='About '+(ml/1000).toFixed(2)+' litres per day ('+Math.round(ml)+' ml, or roughly '+(ml/250).toFixed(1)+' standard 250 ml glasses). Adjust up in heat or with exercise.';
+}
+</script>
+
+<h2>Guides</h2><div class="cards"><div class="card"><a href="guides/calorie-deficit-explained.html"><img src="images/calorie-deficit-explained.jpg" alt="Calorie Deficit Explained — How Weight Loss Actually Works" style="width:100%;height:auto;border-radius:8px"></a><h3><a href="guides/calorie-deficit-explained.html">Calorie Deficit Explained — How Weight Loss Actually Works</a></h3><p>What a calorie deficit is, how to set one safely, and why steady deficits beat crash diets.</p></div>
+<div class="card"><a href="guides/portion-control.html"><img src="images/portion-control.jpg" alt="Portion Control — Eat Less Without Feeling Deprived" style="width:100%;height:auto;border-radius:8px"></a><h3><a href="guides/portion-control.html">Portion Control — Eat Less Without Feeling Deprived</a></h3><p>Practical portion-control methods: hand portions, plate division, and simple swaps that cut calories without hunger.</p></div>
+<div class="card"><a href="guides/exercise-for-weight-loss.html"><img src="images/exercise-for-weight-loss.jpg" alt="Exercise for Weight Loss — What Actually Helps" style="width:100%;height:auto;border-radius:8px"></a><h3><a href="guides/exercise-for-weight-loss.html">Exercise for Weight Loss — What Actually Helps</a></h3><p>Walking, strength training, and cardio compared honestly, plus how to start without burning out.</p></div>
+<div class="card"><a href="guides/healthy-snacking.html"><img src="images/healthy-snacking.jpg" alt="Healthy Snacking — Snacks That Help Instead of Hurt" style="width:100%;height:auto;border-radius:8px"></a><h3><a href="guides/healthy-snacking.html">Healthy Snacking — Snacks That Help Instead of Hurt</a></h3><p>How to snack without breaking your calorie target: protein and fibre choices, portioned snacks, and better habits.</p></div>
+<div class="card"><a href="guides/sleep-and-weight.html"><img src="images/sleep-and-weight.jpg" alt="Sleep and Weight — Why Rest Matters More Than Willpower" style="width:100%;height:auto;border-radius:8px"></a><h3><a href="guides/sleep-and-weight.html">Sleep and Weight — Why Rest Matters More Than Willpower</a></h3><p>How short sleep raises hunger hormones, increases cravings, and makes weight loss harder — and how to fix it.</p></div>
+<div class="card"><a href="guides/breaking-a-plateau.html"><img src="images/breaking-a-plateau.jpg" alt="Breaking a Plateau — What to Do When Weight Loss Stops" style="width:100%;height:auto;border-radius:8px"></a><h3><a href="guides/breaking-a-plateau.html">Breaking a Plateau — What to Do When Weight Loss Stops</a></h3><p>Why plateaus happen, how to tell a real plateau from normal fluctuation, and the safe steps that restart progress.</p></div>
+<div class="card"><a href="guides/walking-for-weight-loss.html"><img src="images/walking-for-weight-loss.jpg" alt="Walking for Weight Loss — The Simplest Exercise That Works" style="width:100%;height:auto;border-radius:8px"></a><h3><a href="guides/walking-for-weight-loss.html">Walking for Weight Loss — The Simplest Exercise That Works</a></h3><p>How to use walking for weight loss: step targets, pace, timing, and how to build the habit.</p></div>
+<div class="card"><a href="guides/strength-training.html"><img src="images/strength-training.jpg" alt="Strength Training for Weight Loss — Keep Muscle, Burn More" style="width:100%;height:auto;border-radius:8px"></a><h3><a href="guides/strength-training.html">Strength Training for Weight Loss — Keep Muscle, Burn More</a></h3><p>Why strength training matters during weight loss, and a simple beginner routine you can do at home.</p></div>
+<div class="card"><a href="guides/hiit-workouts.html"><img src="images/hiit-workouts.jpg" alt="HIIT Workouts for Weight Loss — Short, Intense, Effective" style="width:100%;height:auto;border-radius:8px"></a><h3><a href="guides/hiit-workouts.html">HIIT Workouts for Weight Loss — Short, Intense, Effective</a></h3><p>What HIIT is, how to do it safely, and whether it is right for your weight-loss plan.</p></div>
+<div class="card"><a href="guides/meal-timing.html"><img src="images/meal-timing.jpg" alt="Meal Timing for Weight Loss — Does When You Eat Matter?" style="width:100%;height:auto;border-radius:8px"></a><h3><a href="guides/meal-timing.html">Meal Timing for Weight Loss — Does When You Eat Matter?</a></h3><p>What the evidence says about meal timing, breakfast, late eating, and intermittent fasting for weight loss.</p></div>
+<div class="card"><a href="guides/emotional-eating.html"><img src="images/emotional-eating.jpg" alt="Emotional Eating — Breaking the Stress-Eating Cycle" style="width:100%;height:auto;border-radius:8px"></a><h3><a href="guides/emotional-eating.html">Emotional Eating — Breaking the Stress-Eating Cycle</a></h3><p>Why we eat when we are not hungry, how to tell hunger from emotion, and practical strategies that work.</p></div>
+<div class="card"><a href="guides/weight-loss-for-beginners.html"><img src="images/weight-loss-for-beginners.jpg" alt="Weight Loss for Beginners — Your First Four Weeks" style="width:100%;height:auto;border-radius:8px"></a><h3><a href="guides/weight-loss-for-beginners.html">Weight Loss for Beginners — Your First Four Weeks</a></h3><p>A simple, realistic four-week starter plan for weight loss: food, movement, sleep, and tracking.</p></div>
+<div class="card"><a href="guides/tracking-progress.html"><img src="images/tracking-progress.jpg" alt="Tracking Progress — Beyond the Bathroom Scale" style="width:100%;height:auto;border-radius:8px"></a><h3><a href="guides/tracking-progress.html">Tracking Progress — Beyond the Bathroom Scale</a></h3><p>How to track weight loss properly: weighing, measurements, photos, and what the numbers mean.</p></div>
+<div class="card"><a href="guides/diet-and-metabolism.html"><img src="images/diet-and-metabolism.jpg" alt="Diet and Metabolism — What Really Affects Your Calorie Burn" style="width:100%;height:auto;border-radius:8px"></a><h3><a href="guides/diet-and-metabolism.html">Diet and Metabolism — What Really Affects Your Calorie Burn</a></h3><p>How metabolism works, what speeds it up, what slows it down, and which claims are myths.</p></div>
+<div class="card"><a href="guides/healthy-drinks.html"><img src="images/healthy-drinks.jpg" alt="Healthy Drinks for Weight Loss — What to Drink and What to Skip" style="width:100%;height:auto;border-radius:8px"></a><h3><a href="guides/healthy-drinks.html">Healthy Drinks for Weight Loss — What to Drink and What to Skip</a></h3><p>Drinks can add hundreds of hidden calories. Here is what to choose, what to limit, and how to stay hydrated.</p></div>
+<div class="card"><a href="guides/eating-out-while-losing-weight.html"><img src="images/eating-out-while-losing-weight.jpg" alt="Eating Out While Losing Weight — Enjoy Restaurants Without Undoing Progress" style="width:100%;height:auto;border-radius:8px"></a><h3><a href="guides/eating-out-while-losing-weight.html">Eating Out While Losing Weight — Enjoy Restaurants Without Undoing Progress</a></h3><p>How to eat out and stay on plan: choosing restaurants, ordering smart, managing portions, and handling social pressure.</p></div>
+<div class="card"><a href="guides/weight-loss-myths.html"><img src="images/weight-loss-myths.jpg" alt="Weight Loss Myths — 10 Claims That Waste Your Time and Money" style="width:100%;height:auto;border-radius:8px"></a><h3><a href="guides/weight-loss-myths.html">Weight Loss Myths — 10 Claims That Waste Your Time and Money</a></h3><p>Common weight loss myths debunked with evidence: detoxes, fat-burning foods, carbs, and more.</p></div>
+<div class="card"><a href="guides/sustainable-weight-loss.html"><img src="images/sustainable-weight-loss.jpg" alt="Sustainable Weight Loss — Losing Weight and Keeping It Off" style="width:100%;height:auto;border-radius:8px"></a><h3><a href="guides/sustainable-weight-loss.html">Sustainable Weight Loss — Losing Weight and Keeping It Off</a></h3><p>What research says about keeping weight off: habits, monitoring, support, and the long view.</p></div>
+<div class="card"><a href="guides/weight-loss-and-hormones.html"><img src="images/weight-loss-and-hormones.jpg" alt="Weight Loss and Hormones — How Hormones Affect Hunger and Weight" style="width:100%;height:auto;border-radius:8px"></a><h3><a href="guides/weight-loss-and-hormones.html">Weight Loss and Hormones — How Hormones Affect Hunger and Weight</a></h3><p>The hormones that control appetite, stress, sleep, and weight — and what you can actually do about them.</p></div>
+<div class="card"><a href="guides/maintaining-weight-loss.html"><img src="images/maintaining-weight-loss.jpg" alt="Maintaining Weight Loss — Life After the Diet" style="width:100%;height:auto;border-radius:8px"></a><h3><a href="guides/maintaining-weight-loss.html">Maintaining Weight Loss — Life After the Diet</a></h3><p>How to move from losing weight to keeping it off: calories, habits, monitoring, and enjoying food again.</p></div></div></main>
+<footer><p>Weight Loss Diet &middot; <a href="about.html">About</a> &middot; <a href="contact.html">Contact</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="disclaimer.html">Disclaimer</a></p><p>General information only — not medical advice. Talk to your doctor before starting a weight-loss plan.</p></footer>
+</body>
+</html>
